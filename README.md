@@ -2,6 +2,10 @@
 
 Project: to see if any data points are statistically significant in predicting interstitial fluids
 
+Non-invasive blood glucose / interstitial fluids predictor (if any x variables are statistically significant)
+
+Project issues: I don't have any electrical spectroscopy to measure wrist data (I used apple and fitbit watches for heart rate)
+
 Products used:
 
 [Link](https://www.amazon.com/gp/product/B0D456ZHQQ/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)
