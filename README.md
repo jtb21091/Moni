@@ -28,11 +28,11 @@ Products used:
 
 Measure these with interstitial fluids of Medtronic 780G pump > document data in spreadsheet > run predictive analysis equations
 
-Model(s) used: multivariate linear regression; Adjusted R-squared: 0.164; 
+Model(s) used: multivariate linear regression; Adjusted R-squared: 0.182; 
 
 No variables show statistical significance as of today; p value < .05
 
-Equation: =(-6.8537 * A2) + (-1.5829 * B2) + (2.8971 * C2) + (0.0020 * D2) + (0.4606 * E2) + (-10.5783 * F2) + (-0.0803 * G2) + 1117.6774
+Equation: =(-9.9585 * A2) + (-1.1461 * B2) + (1.8893 * C2) + (-0.0131 * D2) + (0.3522 * E2) + (-6.5143 * F2) + (-4.1331 * G2) + 1155.4386
 
 A2: Acetone ketones ppm
 B2: Blood Pressure Top
@@ -41,3 +41,7 @@ D2: Pulse
 E2: Heart Rate
 F2: Temperature
 G2: Pulse Oxygen
+
+![image](https://github.com/user-attachments/assets/1b0afaed-8d2d-4193-b653-3bdea7df973d)
+
+## Surprisingly, acetone ketones ppm have an inverse relationship with interstitial fluids; albeit a small sample size
