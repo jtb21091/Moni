@@ -32,7 +32,7 @@ Model(s) used: multivariate linear regression; Adjusted R-squared: 0.182;
 
 No variables show statistical significance as of today; p value < .05
 
-Equation: =(-9.9585 * A2) + (-1.1461 * B2) + (1.8893 * C2) + (-0.0131 * D2) + (0.3522 * E2) + (-6.5143 * F2) + (-4.1331 * G2) + 1155.4386
+Equation: = 1267.57 - 10.57 * A2 - 1.2 * B2 + 1.62 * C2 + 0.15 * D2 + 0.24 * E2 - 6.33 * F2 - 5.24 * G2
 
 A2: Acetone ketones ppm
 B2: Blood Pressure Top
@@ -41,6 +41,22 @@ D2: Pulse
 E2: Heart Rate
 F2: Temperature
 G2: Pulse Oxygen
+
+P values:
+
+Acetone ketones ppm: 0.073
+
+Blood Pressure Top: 0.463
+
+Blood Pressure Bottom: 0.526
+
+Pulse: 0.852
+
+Heart Rate: 0.715
+
+Temperature: 0.531
+
+Pulse Oxygen: 0.531
 
 ![image](https://github.com/user-attachments/assets/1b0afaed-8d2d-4193-b653-3bdea7df973d)
 
