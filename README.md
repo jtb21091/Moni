@@ -6,7 +6,7 @@ Non-invasive blood glucose / interstitial fluids predictor (if any x variables a
 
 Project issues: I don't have any electrical spectroscopy to measure wrist data (I used apple and fitbit watches for heart rate)
 
-## if you want to help; please reach out
+## if you want to help; please reach out; I am looking for other variables/devices to test on ~ electrical signals on wrist would be ideal
 
 Products used:
 
