@@ -30,6 +30,8 @@ Measure these with interstitial fluids of Medtronic 780G pump > document data in
 
 Model(s) used: multivariate linear regression; Adjusted R-squared: 0.164; 
 
+No variables show statistical significance as of today; p value < .05
+
 Equation: =(-6.8537 * A2) + (-1.5829 * B2) + (2.8971 * C2) + (0.0020 * D2) + (0.4606 * E2) + (-10.5783 * F2) + (-0.0803 * G2) + 1117.6774
 
 A2: Acetone ketones ppm
