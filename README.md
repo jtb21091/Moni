@@ -1,4 +1,4 @@
-# Moni; updated 8-8-2024
+# Moni; updated 8-12-2024
 
 Project: to see if any data points are statistically significant in predicting interstitial fluids
 
@@ -45,4 +45,5 @@ E2: Heart Rate
 F2: Temperature
 G2: Pulse Oxygen
 
+![image](https://github.com/user-attachments/assets/7da9a813-f359-4a15-b43d-edf5a3b6cf1a)
 
