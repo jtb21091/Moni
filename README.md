@@ -32,10 +32,7 @@ Model(s) used: multivariate linear regression, ridge regression, polynomial regr
 
 No variables show statistical significance as of today; p value < .05
 
-Since no variables show significance, I use the average of all the models used to predict blood glucose/interstitial fluids.
-
-
-
+=-1261.1083286200287 + (6.547188510584982 * A2) + (-1.1243239749581317 * B2) + (-0.5621408159976393 * C2) + (0.45425181361851286 * D2) + (0.4614048915820856 * E2) + (1.299178834629927 * F2) + (13.91891760850327 * G2)
 
 A2: Acetone ketones ppm
 B2: Blood Pressure Top
