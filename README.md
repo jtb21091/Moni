@@ -1,4 +1,4 @@
-# Moni; updated 8-12-2024
+# Moni; updated 8-16-2024
 
 Project: to see if any data points are statistically significant in predicting interstitial fluids
 
@@ -32,7 +32,11 @@ Model(s) used: multivariate linear regression, ridge regression, polynomial regr
 
 No variables show statistical significance as of today; p value < .05
 
-=-1261.1083286200287 + (6.547188510584982 * A2) + (-1.1243239749581317 * B2) + (-0.5621408159976393 * C2) + (0.45425181361851286 * D2) + (0.4614048915820856 * E2) + (1.299178834629927 * F2) + (13.91891760850327 * G2)
+=-1161.0931709756671 + (6.216162514840597 * A2) + (-0.6844709384640743 * B2) + (-0.8752494043432677 * C2) + (0.03745623235827271 * D2) + (0.7220013292763969 * E2) + (1.2956058505741308 * F2) + (12.742887131883645 * G2)
+
+R-squared:                       0.144
+
+Adj. R-squared:                  0.004
 
 A2: Acetone ketones ppm
 B2: Blood Pressure Top
@@ -42,5 +46,5 @@ E2: Heart Rate
 F2: Temperature
 G2: Pulse Oxygen
 
-![image](https://github.com/user-attachments/assets/7da9a813-f359-4a15-b43d-edf5a3b6cf1a)
+![image](https://github.com/user-attachments/assets/06fdfbea-4a15-4891-9af9-4a7c5090f3c9)
 
