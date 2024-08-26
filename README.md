@@ -53,7 +53,9 @@ Arduino using infrared data to predict interstitial fluids
 
 Products used:
 
+![618AQOe0NKL _AC_SL1100_](https://github.com/user-attachments/assets/2399472b-61ae-41e0-8b87-3d8eca41b736)
 [https://www.amazon.com/dp/B0CD719R4M?ref=ppx_yo2ov_dt_b_fed_asin_title
 ](https://www.amazon.com/dp/B081CSJV2V?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
 
+![71+6rfcO+DL _SL1500_](https://github.com/user-attachments/assets/1bdba1cf-9245-485e-a37e-699bee3d91ff)
 https://www.amazon.com/dp/B0CD719R4M?ref=ppx_yo2ov_dt_b_fed_asin_title
