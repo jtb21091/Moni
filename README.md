@@ -1,4 +1,4 @@
-# Moni; updated 8-16-2024
+# Moni; updated 8-26-2024
 
 Project: to see if any data points are statistically significant in predicting interstitial fluids
 
@@ -48,3 +48,12 @@ G2: Pulse Oxygen
 
 ![image](https://github.com/user-attachments/assets/06fdfbea-4a15-4891-9af9-4a7c5090f3c9)
 
+
+Arduino using infrared data to predict interstitial fluids
+
+Products used:
+
+[https://www.amazon.com/dp/B0CD719R4M?ref=ppx_yo2ov_dt_b_fed_asin_title
+](https://www.amazon.com/dp/B081CSJV2V?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
+
+https://www.amazon.com/dp/B0CD719R4M?ref=ppx_yo2ov_dt_b_fed_asin_title
