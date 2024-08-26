@@ -59,3 +59,9 @@ Products used:
 
 ![71+6rfcO+DL _SL1500_](https://github.com/user-attachments/assets/1bdba1cf-9245-485e-a37e-699bee3d91ff)
 https://www.amazon.com/dp/B0CD719R4M?ref=ppx_yo2ov_dt_b_fed_asin_title
+
+This method showed strong p value but low r square which shows some promise.
+
+Blood glucose=152.93+0.0008×IR data
+P-value for the model: 0.00151
+Adjusted R-squared (Adj. R²): 0.111
