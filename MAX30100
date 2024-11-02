@@ -1,0 +1,144 @@
+#MAX30100 sensor
+
+#include <Wire.h>
+#include <Arduino.h>
+
+#define MAX30100_ADDRESS 0x57
+#define REG_FIFO_DATA 0x07
+#define REG_INTR_STATUS_1 0x00
+#define REG_INTR_ENABLE_1 0x02
+#define REG_MODE_CONFIG 0x06
+#define REG_SPO2_CONFIG 0x07
+#define REG_LED_CONFIG 0x09
+
+const int numReadings = 10;
+uint16_t redReadings[numReadings];
+uint16_t irReadings[numReadings];
+int readIndex = 0;
+uint32_t totalRed = 0;
+uint32_t totalIR = 0;
+
+void setup() {
+    Serial.begin(115200); // Set baud rate to 115200
+    Wire.begin(D2, D1); // SDA, SCL
+
+    // Initialize the moving averages
+    for (int i = 0; i < numReadings; i++) {
+        redReadings[i] = 0;
+        irReadings[i] = 0;
+    }
+
+    // Initialize the sensor and check if it was successful
+    if (initializeMAX30100()) {
+        Serial.println("MAX30100 Initialized successfully.");
+    } else {
+        Serial.println("Failed to initialize MAX30100. Please check your connections.");
+        while (1); // Halt further execution
+    }
+}
+
+void loop() {
+    // Update the total by subtracting the oldest value and adding the newest
+    totalRed -= redReadings[readIndex];
+    totalIR -= irReadings[readIndex];
+
+    // Read the new values from the sensor
+    redReadings[readIndex] = readRed();
+    irReadings[readIndex] = readIR();
+
+    totalRed += redReadings[readIndex];
+    totalIR += irReadings[readIndex];
+
+    // Move to the next position in the array
+    readIndex = (readIndex + 1) % numReadings;
+
+    // Calculate the average values
+    uint16_t avgRed = totalRed / numReadings;
+    uint16_t avgIR = totalIR / numReadings;
+
+    // Only process if data is greater than zero
+    if (avgRed > 0 && avgIR > 0) {
+        // Updated regression equation coefficients
+        float estimatedGlucose = 100 
+                                  - 0.0005416 * avgRed 
+                                  - 0.0007574 * avgIR 
+                                  + (2.8891e-8) * avgRed * avgRed 
+                                  + (1.6336e-8) * avgRed * avgIR
+                                  + (3.0995e-8) * avgIR * avgIR 
+                                  - (5.2210e-13) * avgRed * avgRed * avgRed
+                                  + (9.0139e-14) * avgRed * avgRed * avgIR
+                                  - (2.3671e-13) * avgRed * avgIR * avgIR
+                                  - (3.0025e-13) * avgIR * avgIR * avgIR;
+
+        // Print the averaged Red LED, IR, and estimated blood glucose values
+        Serial.print("Avg Red LED Data: ");
+        Serial.print(avgRed);
+        Serial.print(" | Avg IR Data: ");
+        Serial.print(avgIR);
+        Serial.print(" | Estimated Blood Glucose: ");
+        Serial.println(estimatedGlucose);
+    }
+
+  
+}
+
+bool initializeMAX30100() {
+    Wire.beginTransmission(MAX30100_ADDRESS);
+    if (Wire.endTransmission() != 0) {
+        return false; // Sensor not found or not responding
+    }
+
+    // Set up the MAX30100 for SpO2 mode and configure LED currents
+    writeRegister(REG_INTR_ENABLE_1, 0xc0); // Enable interrupts (data ready)
+    writeRegister(REG_MODE_CONFIG, 0x03); // SpO2 mode
+    writeRegister(REG_SPO2_CONFIG, 0x27); // SPO2_ADC_RGE = 4096nA, SPO2_SR = 100Hz, LED_PW = 1600us
+    writeRegister(REG_LED_CONFIG, 0x24); // Set LED current to 12.6mA for IR and Red LEDs
+
+    return true; // Sensor initialized successfully
+}
+
+void writeRegister(uint8_t address, uint8_t data) {
+    Wire.beginTransmission(MAX30100_ADDRESS);
+    Wire.write(address);
+    Wire.write(data);
+    Wire.endTransmission();
+}
+
+uint16_t readIR() {
+    Wire.beginTransmission(MAX30100_ADDRESS);
+    Wire.write(REG_FIFO_DATA);
+    Wire.endTransmission();
+
+    Wire.requestFrom(MAX30100_ADDRESS, 4); // Request 4 bytes from the FIFO
+
+    uint16_t irData = 0;
+
+    if (Wire.available() == 4) { // Ensure we have received 4 bytes
+        Wire.read(); // Skip the red LED data (2 bytes)
+        Wire.read();
+
+        irData = Wire.read(); // Read the first byte of IR data
+        irData <<= 8;
+        irData |= Wire.read(); // Read the second byte of IR data
+    }
+
+    return irData;
+}
+
+uint16_t readRed() {
+    Wire.beginTransmission(MAX30100_ADDRESS);
+    Wire.write(REG_FIFO_DATA);
+    Wire.endTransmission();
+
+    Wire.requestFrom(MAX30100_ADDRESS, 4); // Request 4 bytes from the FIFO
+
+    uint16_t redData = 0;
+
+    if (Wire.available() == 4) { // Ensure we have received 4 bytes
+        redData = Wire.read(); // Read the first byte of Red LED data
+        redData <<= 8;
+        redData |= Wire.read(); // Read the second byte of Red LED data
+    }
+
+    return redData;
+}
