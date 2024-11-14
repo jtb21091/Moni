@@ -67,3 +67,8 @@ https://github.com/user-attachments/assets/d5aa779c-29b8-4b05-bfbd-93402fec3b7b
 Blood glucose=152.93+0.0008×IR data
 P-value for the model: 0.00151
 Adjusted R-squared (Adj. R²): 0.111
+
+
+(999.7440627574921,
+ 0.6610514928733869,
+ '5549950781761.6504 + -168180325243.0623*Age + 0.0000*Gender + -0.7622*Acetone_ppm + -0.0468*Blood_Pressure_Top + -0.5050*Blood_Pressure_Bottom + 0.2330*Pulse + -0.1593*Heart_Rate + -0.6113*Temperature + 0.0854*Pulse_Oxygen + 0.0000*Age^2 + 0.0000*Age Gender + -25.1530*Age Acetone_ppm + -1.5437*Age Blood_Pressure_Top + -16.6643*Age Blood_Pressure_Bottom + 7.6885*Age Pulse + -5.2563*Age Heart_Rate + -20.1722*Age Temperature + 2.8191*Age Pulse_Oxygen + -0.0000*Gender^2 + -0.7622*Gender Acetone_ppm ')
